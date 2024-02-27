@@ -41,8 +41,8 @@ def export_to_csv(matrix, folder_path, filename):
         for row in matrix:
             writer.writerow(row)
     print(f"Matrix successfully exported to '{file_path}'.")
-WATERMARK_TEXT = "nix made this"
-WATERMARK_COLOR = (200, 200, 200)
+TEXT = "nixie made this"
+COLOR = (200, 200, 200)
 # Creates an image from the binary files of the CSV
 def create_image_from_csv(csv_file, output_file):
     with open(csv_file, 'r') as csvfile:
@@ -139,7 +139,7 @@ def main():
         screen.blit(key_img, key_pos)
 
         # Render and blit the watermark text
-        text_surface = font.render(WATERMARK_TEXT, True, WATERMARK_COLOR)   
+        text_surface = font.render(TEXT, True,COLOR)   
         screen.blit(text_surface, (20, 10))  # Adjust position as needed
 
         # Update the display
